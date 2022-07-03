@@ -7,11 +7,6 @@ html, body {
     background: #141c2f;
 }
 
-a:hover {
-    transition: all .3s;
-    text-decoration: underline;
-}
-
 .w-fit {
     width: fit-content;
 }

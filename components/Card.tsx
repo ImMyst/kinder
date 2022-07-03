@@ -46,11 +46,11 @@ export const Card = (props: Props) => {
             <div class={tw`w-full`}>
                 <div class={tw`flex flex-col`}>
                     <div class={tw`flex items-center justify-between`}>
-                        <h2 class={tw`text-3xl font-bold`}>{name}</h2>
-                        <span class={tw`text-gray-400`}>Joined {createdAt}</span>
+                        <h2 class={tw`text-3xl font-bold w-1/2 truncate`}>{name}</h2>
+                        <span class={tw`text-gray-200`}>Joined {createdAt}</span>
                     </div>
                     <a
-                        class={tw`text-main mt-1 w-fit`}
+                        class={tw`text-main mt-1 hover:underline w-fit`}
                         href={`https://github.com/${username}`}
                         target="_target"
                     >
@@ -63,16 +63,16 @@ export const Card = (props: Props) => {
                 <div class={tw`second-card py-4 px-8 rounded-xl w-full`}>
                     <div class={tw`grid grid-cols-3 gap-32 w-3/4`}>
                         <div class={tw`w-full`}>
-                            <p class={tw`text-gray-400`}>Repos</p>
-                            <p>{information.repos}</p>
+                            <p class={tw`text-gray-400 text-sm`}>Repos</p>
+                            <p class={tw`font-bold text-2xl`}>{information.repos}</p>
                         </div>
                         <div class={tw`w-full`}>
-                            <p class={tw`text-gray-400`}>Followers</p>
-                            <p>{information.followers}</p>
+                            <p class={tw`text-gray-400 text-sm`}>Followers</p>
+                            <p class={tw`font-bold text-2xl`}>{information.followers}</p>
                         </div>
                         <div class={tw`w-full`}>
-                            <p class={tw`text-gray-400`}>Following</p>
-                            <p>{information.following}</p>
+                            <p class={tw`text-gray-400 text-sm`}>Following</p>
+                            <p class={tw`font-bold text-2xl`}>{information.following}</p>
                         </div>
                     </div>
                 </div>
