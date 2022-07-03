@@ -8,12 +8,11 @@ import { Title } from "../components/Title.tsx";
 
 export default function Home(props: PageProps) {
   const meta = {
-    title: "Fresh Github Finder - Home",
     description: "Super description de fou",
     meta: {
       charset: "utf-8",
       name: {
-        keywords: "deno,fresh,github,finder,api,test,yes",
+        keywords: "deno,kinder,fresh,github,finder,api,test,yes",
       },
     },
   };

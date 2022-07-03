@@ -24,8 +24,8 @@ export const Layout = ({ children, ...customMeta }: Props) => {
 
 const Seo = ({ ...customMeta }) => {
   const meta = {
-    title: "Fresh Github Finder",
-    description: "Fresh test",
+    title: "Kinder - Github Profile Finder",
+    description: "Kinder, a Github Profile Finder built with Fresh, Preact and Tailwind",
     type: "website",
     ...customMeta,
   };
