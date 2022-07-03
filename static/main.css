@@ -5,6 +5,11 @@ html, body {
     color: aliceblue;
 }
 
+::selection {
+    background: #0379fd;
+    color: aliceblue;
+}
+
 .second-card {
     background: #141c2f;
 }
