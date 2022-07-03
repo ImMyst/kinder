@@ -9,6 +9,10 @@ html, body {
     background: #141c2f;
 }
 
+.search-icon {
+    fill: #0379fd;
+}
+
 .w-fit {
     width: fit-content;
 }
