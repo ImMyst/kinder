@@ -41,8 +41,10 @@ export const Card = (props: Props) => {
     } = props;
 
     return (
-        <div class={tw`bg-accent px-8 py-10 rounded-xl font-main flex w-full`}>
-            <img src={imageUrl} alt={`${username} profile image`} />
+        <div class={tw`bg-accent px-8 py-10 rounded-xl space-x-8 font-main flex w-full`}>
+            <div class={tw`w-40 h-40`}>
+                <img src={imageUrl} alt={`${username} profile image`} class={tw`rounded-full`} />
+            </div>
             <div class={tw`w-full`}>
                 <div class={tw`flex flex-col`}>
                     <div class={tw`flex items-center justify-between`}>
@@ -83,13 +85,29 @@ export const Card = (props: Props) => {
                     </div>
                     <div class={tw`flex space-x-4 ${twitter ? '' : 'text-gray-400'}`}>
                         <TwitterIcon />
-                        <span>{twitter ?? 'Not Available'}</span>
+                        {
+                            twitter
+                            ? <a
+                                class={tw`hover:underline`}
+                                href={`https://twitter.com/${twitter}`}
+                                target="_blank"
+                                >
+                                    @{twitter}
+                                </a>
+                            : <span>Not Available</span>
+                        }
                     </div>
                     <div class={tw`flex space-x-4 ${website ? '' : 'text-gray-400'}`}>
                         <SiteIcon />
                         {
                             website
-                            ? <a href={website}>{website}</a>
+                            ? <a
+                                class={tw`hover:underline`}
+                                href={website}
+                                target="_blank"
+                                >
+                                    {website.split('/')[2]}
+                            </a>
                             : <span>Not Available</span>
                         }
                     </div>

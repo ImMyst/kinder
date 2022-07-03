@@ -22,7 +22,7 @@ export default function Home(props: PageProps) {
         <Title />
         <Card
           createdAt='25 Jan 2011'
-          imageUrl=''
+          imageUrl='https://randomuser.me/api/portraits/men/1.jpg'
           information={{
             followers: 10,
             repos: 54,
@@ -31,6 +31,8 @@ export default function Home(props: PageProps) {
           name='ImMyst'
           username="ImMyst"
           location="Lyon"
+          twitter="immyst_"
+          website="https://titou-galva.fr"
         />
       </Layout>
   );
