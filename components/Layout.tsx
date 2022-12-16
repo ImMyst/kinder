@@ -1,7 +1,4 @@
-/** @jsx h */
-/** @jsxFrag Fragment */
-import { ComponentChildren, Fragment, h } from "preact";
-import { tw } from "@twind";
+import { ComponentChildren } from "preact";
 import { Head } from "https://deno.land/x/fresh@1.0.0/runtime.ts";
 
 export type Props = {
@@ -14,9 +11,12 @@ export type Props = {
 export const Layout = ({ children, ...customMeta }: Props) => {
   return (
     <>
-      <div style={{ minHeight: "100vh" }}>
+      <div
+        style={{ minHeight: "100vh" }}
+        className="bg-primary text-text font-sans"
+      >
         <Seo {...customMeta} />
-        <div class={tw`p-12 mx-auto max-w-screen-md`}>{children}</div>
+        <div class="p-12 mx-auto max-w-screen-md">{children}</div>
       </div>
     </>
   );
@@ -25,7 +25,8 @@ export const Layout = ({ children, ...customMeta }: Props) => {
 const Seo = ({ ...customMeta }) => {
   const meta = {
     title: "Kinder - Github Profile Finder",
-    description: "Kinder, a Github Profile Finder built with Fresh, Preact and Tailwind",
+    description:
+      "Kinder, a Github Profile Finder built with Fresh, Preact and Tailwind",
     type: "website",
     ...customMeta,
   };

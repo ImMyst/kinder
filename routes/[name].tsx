@@ -1,26 +1,24 @@
-/** @jsx h */
-import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
 
-interface User {
+type TUser = {
   login: string;
   name: string;
   avatar_url: string;
-}
+};
 
-export const handler: Handlers<User | null> = {
+export const handler: Handlers<TUser | null> = {
   async GET(_, ctx) {
     const { name } = ctx.params;
     const resp = await fetch(`https://api.github.com/users/${name}`);
     if (resp.status === 404) {
       return ctx.render(null);
     }
-    const user: User = await resp.json();
+    const user: TUser = await resp.json();
     return ctx.render(user);
   },
 };
 
-export default function Page({ data }: PageProps<User | null>) {
+export default function Page({ data }: PageProps<TUser | null>) {
   if (!data) {
     return <h1>User not found</h1>;
   }
