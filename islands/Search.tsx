@@ -1,11 +1,11 @@
-import { SearchIcon } from "../components/icons/SearchIcon.tsx";
+import * as Icon from "../components/Icons.tsx";
 
 const Search = () => {
   return (
     <div class="bg-accent rounded-xl font-main h-full">
       <form action="/" method="get" class="flex items-center p-2 w-full h-full">
         <div class="ml-4 mr-6 -mt-1">
-          <SearchIcon />
+          <Icon.Search />
         </div>
         <input
           class="border-none px-4 focus:outline-none focus:bg-accent focus:ring focus:ring-main transition-colors h-12 rounded-xl mr-4 bg-primary w-full"

@@ -5,18 +5,8 @@ import { Title } from "../components/Title.tsx";
 import Search from "../islands/Search.tsx";
 
 export default function Home(props: PageProps) {
-  const meta = {
-    description: "Super description de fou",
-    meta: {
-      charset: "utf-8",
-      name: {
-        keywords: "deno,kinder,fresh,github,finder,api,test,yes",
-      },
-    },
-  };
-
   return (
-    <Layout {...meta}>
+    <Layout>
       <Title />
       <div class="flex flex-col space-y-4">
         <Search />

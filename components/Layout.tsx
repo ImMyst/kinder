@@ -1,5 +1,5 @@
 import { ComponentChildren } from "preact";
-import { Head } from "https://deno.land/x/fresh@1.0.0/runtime.ts";
+import { Head } from "$fresh/runtime.ts";
 
 export type Props = {
   children: ComponentChildren;
@@ -9,20 +9,6 @@ export type Props = {
 };
 
 export const Layout = ({ children, ...customMeta }: Props) => {
-  return (
-    <>
-      <div
-        style={{ minHeight: "100vh" }}
-        className="bg-primary text-text font-sans"
-      >
-        <Seo {...customMeta} />
-        <div class="p-12 mx-auto max-w-screen-md">{children}</div>
-      </div>
-    </>
-  );
-};
-
-const Seo = ({ ...customMeta }) => {
   const meta = {
     title: "Kinder - Github Profile Finder",
     description:
@@ -32,11 +18,20 @@ const Seo = ({ ...customMeta }) => {
   };
 
   return (
-    <Head>
-      <title>{meta.title}</title>
-      <meta content={meta.description} name="description" />
-      <link rel="icon" href="/favicon.ico" />
-      <link rel="stylesheet" href="/main.css" />
-    </Head>
+    <>
+      <Head>
+        <title>{meta.title}</title>
+        <meta content={meta.description} name="description" />
+        <meta property="og:type" content={meta.type} />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="/main.css" />
+      </Head>
+      <div
+        style={{ minHeight: "100vh" }}
+        className="bg-primary text-text font-sans"
+      >
+        <div class="p-12 mx-auto max-w-screen-md">{children}</div>
+      </div>
+    </>
   );
 };

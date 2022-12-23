@@ -1,8 +1,5 @@
 import { tw } from "twind";
-import { LocationIcon } from "./icons/LocationIcon.tsx";
-import { TwitterIcon } from "./icons/TwitterIcon.tsx";
-import { SiteIcon } from "./icons/SiteIcon.tsx";
-import { CompanyIcon } from "./icons/CompanyIcon.tsx";
+import * as Icon from "./Icons.tsx";
 
 type TProfileInfo = {
   repos: number;
@@ -83,11 +80,11 @@ export const Card = (props: TProps) => {
         </div>
         <div class="grid grid-cols-2 grid-row-2 gap-4 mt-8 w-full">
           <div class={tw`flex space-x-4 ${location ? "" : "text-gray-400"}`}>
-            <LocationIcon />
+            <Icon.Location />
             <span>{location ?? "Not Available"}</span>
           </div>
           <div class={tw`flex space-x-4 ${twitter ? "" : "text-gray-400"}`}>
-            <TwitterIcon />
+            <Icon.Twitter />
             {twitter ? (
               <a
                 class="hover:underline"
@@ -101,7 +98,7 @@ export const Card = (props: TProps) => {
             )}
           </div>
           <div class={tw`flex space-x-4 ${website ? "" : "text-gray-400"}`}>
-            <SiteIcon />
+            <Icon.Site />
             {website ? (
               <a class="hover:underline" href={website} target="_blank">
                 {website.split("/")[2]}
@@ -111,7 +108,7 @@ export const Card = (props: TProps) => {
             )}
           </div>
           <div class={tw`flex space-x-4 ${company ? "" : "text-gray-400"}`}>
-            <CompanyIcon />
+            <Icon.Company />
             <span>{company ?? "Not Available"}</span>
           </div>
         </div>

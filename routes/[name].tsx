@@ -1,4 +1,5 @@
 import { Handlers, PageProps } from "$fresh/server.ts";
+import { Layout } from "../components/Layout.tsx";
 
 type TUser = {
   login: string;
@@ -24,10 +25,10 @@ export default function Page({ data }: PageProps<TUser | null>) {
   }
 
   return (
-    <div>
+    <Layout>
       <img src={data.avatar_url} width={64} height={64} />
       <h1>{data.name}</h1>
       <p>{data.login}</p>
-    </div>
+    </Layout>
   );
 }
