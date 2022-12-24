@@ -2,7 +2,7 @@ import { PageProps } from "$fresh/server.ts";
 import { Layout } from "../components/Layout.tsx";
 import { Card } from "../components/Card.tsx";
 import { Title } from "../components/Title.tsx";
-import Search from "../islands/Search.tsx";
+import Search from "../components/Search.tsx";
 
 export default function Home(props: PageProps) {
   return (

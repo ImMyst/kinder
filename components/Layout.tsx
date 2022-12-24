@@ -3,9 +3,6 @@ import { Head } from "$fresh/runtime.ts";
 
 export type Props = {
   children: ComponentChildren;
-  title?: string;
-  name?: string;
-  description?: string;
 };
 
 export const Layout = ({ children, ...customMeta }: Props) => {
