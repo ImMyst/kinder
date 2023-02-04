@@ -20,15 +20,17 @@ export const handler: Handlers<TUser | null> = {
 };
 
 export default function Page({ data }: PageProps<TUser | null>) {
-  if (!data) {
-    return <h1>User not found</h1>;
-  }
-
   return (
     <Layout>
-      <img src={data.avatar_url} width={64} height={64} />
-      <h1>{data.name}</h1>
-      <p>{data.login}</p>
+      {!data ? (
+        <h1>User Not Found</h1>
+      ) : (
+        <>
+          <img src={data.avatar_url} width={64} height={64} />
+          <h1>{data.name}</h1>
+          <p>{data.login}</p>
+        </>
+      )}
     </Layout>
   );
 }

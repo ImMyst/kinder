@@ -34,8 +34,6 @@ export const Card = (props: TProps) => {
     website,
   } = props;
 
-  console.log(bio);
-
   return (
     <div class="bg-accent px-8 py-10 rounded-xl space-x-8 font-main flex w-full">
       <div class="w-40 h-40">
